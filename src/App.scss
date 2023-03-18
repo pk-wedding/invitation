@@ -1,0 +1,633 @@
+body {
+  width: 100%;
+  height: 100vh;
+  font-family: "JetBrains Mono", monospace;
+  color: #563C77;
+  text-align: center;
+}
+
+#root {
+  width: 100%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.block {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+
+}
+
+.block.first {
+  min-height: 100vh;
+  padding-top: 160px;
+  background: linear-gradient(-45deg, #F9AC9C, #FB9FB3, #9AA8E8, #C991ED, #CA6AAD);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
+
+.greetings {
+  position: relative;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  padding: 55px 55px 60px 55px;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  color: #321C4E;
+}
+
+.name {
+  font-size: 60px;
+  font-family: "Jura";
+  margin-bottom: 70px;
+  color: #563C77;
+}
+
+.caption {
+  margin-bottom: 28px;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.caption2 {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.signature {
+  margin-top: 60px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.question {
+  text-align: center;
+  font-family: Jura;
+  font-weight: 700;
+  font-size: 28px;
+  margin-top: 120px;
+}
+
+.arrow {
+  margin-top: 35px;
+}
+
+.smallLine {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: -7px;
+  width: 32px;
+  border-width: 3px 0 3px 3px;
+  border-color: #563c77;
+  border-style: solid;
+  height: 100%;
+}
+
+.smallLine.right {
+  left: unset;
+  right: -7px;
+  transform: rotate(180deg);
+
+}
+
+
+.bigLine {
+  box-sizing: border-box;
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 33%;
+  border-width: 3px 0 0px 3px;
+  border-color: #563c77;
+  border-style: solid;
+  height: 100%;
+}
+
+
+.bigLine.right {
+  left: unset;
+  right: 0;
+  top: unset;
+  bottom: -7px;
+  transform: rotate(180deg);
+}
+
+.block.second {
+  min-height: initial;
+  padding-bottom: 100px;
+  background-color: #fff;
+}
+
+.wedding-date {
+  display: block;
+  font-size: 6.5em;
+  font-family: Jura;
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #F5D1C9;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #F9C1CD;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #C9B1D8;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #B4BDE9;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #D6A5C7;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+.guide {
+  width: 65%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.guide-info {
+  line-height: 24px;
+
+}
+
+.section-caption {
+  font-size: 44px;
+}
+
+.guide-info-caption {
+  text-align: center;
+  font-family: Jura;
+  font-weight: 700;
+  margin-bottom: 66px;
+  line-height: 30px;
+}
+
+.guide-map {
+  width: 620px;
+  height: 400px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.07), 0 0 10px rgba(0, 0, 0, 0.07);
+}
+
+.block.third, .block.fourth, .block.fifth, .block.sixth {
+  padding-top: 54px;
+  background-color: #E2E6FA;
+  display: flex;
+  align-items: center;
+}
+
+.day-program-caption {
+  font-family: Jura;
+  margin-bottom: 50px;
+}
+
+.day-program {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-part {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  align-items: center;
+  margin-top: 20px;
+
+  & > *:nth-child(3) {
+    text-align: left;
+  }
+}
+
+.day-part > *:first-child, .day-part > *:nth-child(3) {
+  align-self: flex-start;
+}
+
+.day-part-date,
+.day-part-caption {
+  font-weight: 500;
+}
+
+.day-part-date {
+  font-size: 24px;
+}
+
+.day-part-caption {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.day-part-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.day-part-separator {
+  width: 0;
+  height: 66px;
+  border-right: 2px dashed #563C77;
+}
+
+.block.fourth {
+  background-color: #fff;
+}
+
+.dress-code-caption {
+  font-family: Jura;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #563c77;
+}
+
+.dress-code-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.dress-code-text {
+  text-align: center;
+}
+
+.dress-code-colors {
+  display: flex;
+  margin-top: 50px;
+}
+
+.rect-right, .rect-left, .rect-bottom, .rect-top, .rect-center {
+  transition: translate 300ms, opacity 300ms;
+}
+
+.dress-code-colors svg:hover, .dress-code-colors svg.active {
+  cursor: pointer;
+
+
+  .rect-right {
+    translate: 10px;
+  }
+
+  .rect-left {
+    translate: -10px;
+  }
+
+  .rect-bottom {
+    translate: 0 10px;
+  }
+
+  .rect-top {
+    translate: 0 -10px;
+  }
+
+  .rect-center {
+    opacity: 0;
+  }
+
+}
+
+.dress-code-image {
+  width: 50%;
+  position: relative;
+}
+
+.block.fifth {
+  background-color: #FAE6E1;
+}
+
+.organizers {
+  width: 38%;
+  margin-top: 80px;
+  padding: 60px 120px;
+  gap: 40px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.organizer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  img {
+    user-select: none;
+  }
+
+}
+
+.organizer-name {
+  font-weight: 500;
+  font-size: 24px;
+  color: #321C4E;
+}
+
+.organizer-contacts {
+  text-align: center;
+  line-height: 21px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+
+.contact-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.block.sixth {
+  background-color: #fff;
+  padding-bottom: 0;
+}
+
+.form-deadLine {
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+
+.guest-forms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.submit-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.submit-caption {
+  font-size: 14px;
+  color: #777777;
+  margin-top: 12px;
+}
+
+.footer {
+  margin-top: 50px;
+  margin-bottom: 70px;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Jura;
+}
+
+@media (max-width: 425px) {
+  .guide-info-caption {
+    font-size: 36px;
+  }
+
+
+  .dress-code-color.dress-code-color.dress-code-color.dress-code-color.dress-code-color {
+    width: 60px;
+    height: 85px;
+  }
+  .dress-code-color2.dress-code-color2.dress-code-color2.dress-code-color2.dress-code-color2 {
+    width: 91px;
+    height: 85px;
+  }
+
+  .section-caption.section-caption {
+    font-size: 32px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  .section-caption {
+    font-size: 36px;
+  }
+
+
+  .dress-code-color.dress-code-color.dress-code-color.dress-code-color {
+    width: 80px;
+    height: 105px;
+  }
+  .dress-code-color2.dress-code-color2.dress-code-color2.dress-code-color2 {
+    width: 111px;
+    height: 105px;
+  }
+  .dress-code-image.dress-code-image {
+    width: 75%;
+  }
+  .day-program {
+    gap: 40px;
+  }
+  .day-part {
+    flex-direction: column;
+    gap: 40px;
+
+    > * {
+      &:nth-child(3) {
+        text-align: center;
+      }
+
+      align-self: center !important;
+    }
+
+
+    .day-part-separator {
+      display: none;
+    }
+  }
+
+  .footer {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .guide {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .organizers {
+    flex-direction: column;
+    gap: 30px;
+
+    .organizer-contacts {
+      justify-content: space-evenly;
+    }
+
+    img {
+      width: 188px !important;
+    }
+
+    .contact-icon {
+      font-size: 20px !important;
+    }
+
+
+    padding: 60px 40px;
+  }
+  .wedding-date {
+    font-size: 5.5em;
+    width: 75%;
+  }
+
+  .dress-code-image {
+    width: 60%;
+  }
+
+  .dress-code-color.dress-code-color.dress-code-color {
+    width: 100px;
+    height: 125px;
+  }
+  .dress-code-color2.dress-code-color2.dress-code-color2 {
+    width: 131px;
+    height: 125px;
+  }
+
+  /* стили для xs-устройств */
+}
+
+@media (max-width: 991px) {
+  .organizers {
+    .organizer-contacts {
+      font-size: 14px;
+    }
+
+    img {
+      width: 188px;
+    }
+
+    .contact-icon {
+      font-size: 26px;
+    }
+
+
+    padding: 60px 40px;
+  }
+  .guide {
+    flex-direction: column;
+  }
+  .name {
+    font-size: 40px;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .block.first {
+    padding-top: 20px;
+  }
+
+  .guide-map {
+    width: 100%;
+  }
+
+  .dress-code-color.dress-code-color {
+    width: 130px;
+  }
+  .dress-code-color2.dress-code-color2 {
+    width: 161px;
+  }
+  /* стили для sm-устройств */
+}
+
+@media (max-width: 1199px) {
+  .caption, .caption2 {
+    text-align: center;
+    align-self: center;
+  }
+
+  .guide {
+    flex-direction: column;
+    gap: 50px;
+    width: 90%;
+  }
+  .dress-code-color {
+    width: 160px;
+    height: 185px;
+  }
+  .dress-code-color2 {
+    width: 191px;
+    height: 185px;
+  }
+  .organizers {
+    width: 55%;
+  }
+
+  /* стили для md-устройств */
+}
+
+@media (max-width: 1600px) {
+  .guide {
+    width: 75%;
+  }
+
+  /* стили для md-устройств */
+}
+
+@media (max-width: 1400px) {
+  .guide {
+    width: 85%;
+  }
+
+  /* стили для md-устройств */
+}

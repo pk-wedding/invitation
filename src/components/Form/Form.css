@@ -1,0 +1,59 @@
+.form {
+    font-family: "JetBrains Mono" !important;
+    color: #321C4E;
+    text-align: left;
+
+}
+
+.form * {
+    font-family: "JetBrains Mono" !important;
+}
+
+.form-name-block {
+    border: 2px solid #f9c1cd;
+    border-bottom-width: 0;
+}
+
+.form-name-guest {
+    left: 12px;
+    position: relative;
+    top: -18px;
+    background-color: #fff;
+    display: inline-block;
+    padding: 0 12px;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.form-content {
+    padding-left: 24px;
+}
+
+.form-block {
+    font-size: 16px;
+}
+
+.form-block-caption {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.form-block-caption.comment {
+    margin-bottom: 6px;
+}
+
+.form-other {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.other-input {
+    border-bottom: 2px solid #563c77;
+}
+
+.comment-text {
+    font-size: 14px;
+    margin-bottom: 14px;
+}
