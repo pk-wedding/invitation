@@ -20,7 +20,7 @@ const allGuests = {
     "rs2b4x": ["Аня"],
     "q2a8js": ["Маша", "Серёжа", "Даша", "Вика"],
     "uqgovj": ["Юля", "Альберт"],
-    "1ji6uf": ["Наташа","Ваня"],
+    "1ji6uf": ["Наташа", "Ваня"],
     "7ydr2q": ["Маша", "Кирилл"],
     "af5681": ["Настя", "Миша"],
     "vucc44": ["Ксюша", "Андрей"],
@@ -66,7 +66,12 @@ function App() {
     const isLaptop = useMediaQuery({query: "(max-width: 1199px)"});
     const isTablet = useMediaQuery({query: "(max-width: 768px)"});
     const isLargeMobile = useMediaQuery({query: "(max-width: 425px)"});
-    const viewBox = getDateViewBox(isLaptop,isTablet,isLargeMobile);
+    const viewBox = getDateViewBox(isLaptop, isTablet, isLargeMobile);
+    const isAlone = guests.length === 1;
+
+    const getDifferentText = (alone: string, multiple: string) => {
+        return isAlone ? alone : multiple;
+    }
 
     const handleSetColor = (index: number) => () => {
         setActiveColor(index);
@@ -93,20 +98,23 @@ function App() {
                             <div className={'text'}>
                                 <div
                                     className={"name"}>{guests.length > 1 ? `${guests.slice(0, -1).join(", ")} и ${guests.slice(-1)}` : guests[0]}</div>
-                                <div className={"caption"}>Мы рады пригласить вас на празднование<br/> долгожданного и
+                                <div className={"caption"}>Мы рады пригласить {getDifferentText("тебя", "вас")} на
+                                    празднование<br/> долгожданного и
                                     радостного
                                     события – <br/>
                                     дня нашей свадьбы
                                 </div>
-                                <div className={"caption2"}>И будем счастливы разделить с вами, самыми<br/> близкими для
-                                    нас
-                                    людьми, этот светлый и<br/>
+                                <div className={"caption2"}>И будем счастливы разделить
+                                    с {getDifferentText("тобой", "вами")}, {getDifferentText("одним из самых", "самыми")}<br/> {getDifferentText("близких", "близкими")} для
+                                    нас{" "}
+                                    {getDifferentText("людей", "людьми")}, этот светлый и<br/>
                                     замечательный день
                                 </div>
                                 <div className={"signature"}>С любовью, Паша и Кристина</div>
                             </div>
                         </div>
-                        <div className={"question"}>Вы готовы погрузиться в наш мир?</div>
+                        <div className={"question"}>{getDifferentText("Ты готов", "Вы готовы")} погрузиться в наш мир?
+                        </div>
                         <motion.div style={{y: 0}} className={"arrow"} animate={{y: [0, 10, 0]}}
                                     transition={{repeatType: "loop", repeat: Infinity, duration: 1}}>
                             <svg width="45" height="35" viewBox="0 0 45 35" fill="none"
@@ -155,7 +163,8 @@ function App() {
                         </div>
                         <div className={"guide"}>
                             <div className={"guide-info"}>
-                                <div className={"section-caption guide-info-caption"} data-text={"Как добраться?"}>Как добраться?
+                                <div className={"section-caption guide-info-caption"} data-text={"Как добраться?"}>Как
+                                    добраться?
                                 </div>
                                 <div>
                                     <div><b>Отель Тенет</b></div>
@@ -226,9 +235,9 @@ function App() {
                     </motion.div>
                     <motion.div className={"block fourth"} {...animationProps}>
                         <div className={"section-caption dress-code-caption"}>Dress code</div>
-                        <div className={"dress-code-text"}>Мы будем очень благодарны, если вы поддержите цветовую
-                            палитру<br/> нашей свадьбы в ваших
-                            нарядах
+                        <div className={"dress-code-text"}>Мы будем очень благодарны,
+                            если {getDifferentText("ты поддержишь", "вы поддержите")} цветовую
+                            палитру<br/> нашей свадьбы в {getDifferentText("своем наряде", "ваших нарядах")}
                         </div>
                         <div className={"dress-code-content"}>
                             <div className={"dress-code-colors"}>
@@ -244,25 +253,25 @@ function App() {
                                         className={`dress-code-color ${activeColor === 4 ? "active" : undefined}`}/>
                             </div>
                             <div className={"dress-code-image"}>
-                                <Carousel selectedItem={activeColor} ref={sliderRef}  width={"100%"} infiniteLoop
+                                <Carousel selectedItem={activeColor} ref={sliderRef} width={"100%"} infiniteLoop
                                           showArrows={false}
                                           showIndicators={false}
                                           showStatus={false}
                                           showThumbs={false} swipeable={false}>
                                     <img
-                                        src={"https://www.mam4.ru/resize/1280x-/https/www.mam4.ru/media/upload/user/7604/6d/17478da42271207e1d86.jpg?h=Mxo3Zb0KBXasmNFnDhoRbA"}/>
+                                        src={"./example1.png"}/>
 
                                     <img
-                                        src={"https://mobimg.b-cdn.net/v3/fetch/fe/fe22186dba2df35f07573604aa8a0e63.jpeg?w=1470&r=0.5625"}/>
+                                        src={"./example2.png"}/>
 
                                     <img
-                                        src={"https://i01.fotocdn.net/s121/812174e17c001a41/public_pin_l/2764195349.jpg"}/>
+                                        src={"./example3.png"}/>
 
                                     <img
-                                        src={"https://chudo-prirody.com/uploads/posts/2021-08/1628905013_66-p-skachat-foto-milikh-kotikov-72.jpg"}/>
+                                        src={"./example4.png"}/>
 
                                     <img
-                                        src={"https://mobimg.b-cdn.net/v3/fetch/aa/aaa5465c1c0026e54fa9dc7f8d35c3a9.jpeg"}/>
+                                        src={"./example5.png"}/>
                                 </Carousel>
 
                             </div>
@@ -317,7 +326,7 @@ function App() {
                                 отправлены<br/> Спасибо!
                             </div>
                         </div>
-                        <div className={"footer"}>Мы будем счастливы видеть вас!</div>
+                        <div className={"footer"}>Мы будем счастливы видеть {getDifferentText("тебя", "вас")}!</div>
                     </motion.div>
                 </div>
             </ConfigProvider>
