@@ -310,6 +310,7 @@ body {
 
 .dress-code-text {
   text-align: center;
+  width: 50%;
 }
 
 .dress-code-colors {
@@ -443,6 +444,14 @@ body {
 }
 
 @media (max-width: 425px) {
+
+  .question, .section-caption, {
+    padding: 0 30px;
+  }
+  .section-subtext {
+    padding: 0 30px;
+  }
+
   .guide-info-caption {
     font-size: 36px;
   }
@@ -597,6 +606,9 @@ body {
   }
   .dress-code-color2.dress-code-color2 {
     width: 161px;
+  }
+  .dress-code-text {
+    width: 65%;
   }
   /* стили для sm-устройств */
 }

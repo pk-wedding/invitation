@@ -26,12 +26,21 @@ const allGuests = {
     "vucc44": ["Ксюша", "Андрей"],
     "rhyfrv": ["Вова"],
     "g4qkrd": ["Виталя"],
-    "wjvcfm": ["Лёша"]
+    "wjvcfm": ["Лёша"],
+    "n8w6vh": ["Мама"],
+    "s9wkk1": ["Папа"],
+    "ha74yo": ["Мама", "Папа"]
+}
+
+
+const getGuestId = () => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+
+    return urlSearchParams.get("guestId");
 }
 
 const getGuest = () => {
-    const urlSearchParams = new URLSearchParams(window.location.search);
-    const guestId = urlSearchParams.get("guestId");
+    const guestId = getGuestId()
     //@ts-ignore
     return (guestId && allGuests[guestId]) || ["Дорогой гость"]
 
@@ -57,7 +66,8 @@ const getDateViewBox = (isLaptop: boolean, isTablet: boolean, isLargeMobile: boo
 }
 
 function App() {
-    const [guests, setGuests] = React.useState<string[]>(getGuest())
+    const [guests, setGuests] = React.useState<string[]>(getGuest());
+    const [guestId] = React.useState<string | null>(getGuestId());
     const ref = React.useRef<HTMLDivElement | null>(null)
     const [forms, setForms] = React.useState({});
     const [submitted, setSubmitted] = React.useState(false);
@@ -78,7 +88,7 @@ function App() {
     }
 
     const handleFormChange = (guestName: string, formValue: any) => {
-        setForms(({...forms, [guestName]: formValue}))
+        setForms(({...forms, guestId, [guestName]: formValue}))
 
     }
     const handleSubmit = () => {
@@ -280,9 +290,10 @@ function App() {
 
                     <motion.div className={"block fifth"} {...animationProps}>
                         <div className={"section-caption dress-code-caption"}>Организация свадьбы</div>
-                        <div className={"dress-code-text"}>Наши организаторы с радостью помогут в различных вопросах,
+                        <div className={"section-subtext dress-code-text"}>Наши организаторы с радостью помогут в
+                            различных вопросах,
                             будь
-                            то<br/> поиск входа в банкетный
+                            то поиск входа в банкетный
                             зал
                             или подготовка сюрприза
                         </div>
@@ -317,7 +328,7 @@ function App() {
                     </motion.div>
                     <motion.div className={"block sixth"} {...animationProps}>
                         <div className={"section-caption dress-code-caption"}>Ответ на приглашение</div>
-                        <div className={"form-deadLine"}>
+                        <div className={"section-subtext form-deadLine"}>
                             Мы просим подтвердить свое присутствие на торжестве и ответить на<br/> несколько вопросов,
                             которые
                             помогут нам при организации свадьбы<br/><br/>
