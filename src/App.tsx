@@ -291,17 +291,26 @@ function App() {
                             <div className={"bigLine"}/>
                             <div className={"smallLine right"}/>
                             <div className={"bigLine right"}/>
-                            {["inna", "elena"].map((organizer) => <div className={"organizer"} key={organizer}>
-                                <div><img src={`./${organizer}.png`} alt="" unselectable={"on"} draggable={"false"}/>
+                            {[{name: "inna", phone: "+79126335096"}, {
+                                name: "elena",
+                                phone: "+79995680516"
+                            }].map((organizer) => <div className={"organizer"} key={organizer.name}>
+                                <div><img src={`./${organizer.name}.png`} alt="" unselectable={"on"}
+                                          draggable={"false"}/>
                                 </div>
-                                <div className={"organizer-name"}>{organizer === "inna" ? "Инна" : "Елена"}</div>
+                                <div className={"organizer-name"}>{organizer.name === "inna" ? "Инна" : "Елена"}</div>
                                 <div className={"organizer-contacts"}>
-                                    <div><PhoneOutlined className={"contact-icon"}/>
-                                        <div>Позвонить<br/> по телефону</div>
-                                    </div>
+                                    <a style={{color: "inherit", textDecoration: "none"}}
+                                       href={`tel:${organizer.phone}`}>
+                                        <div><PhoneOutlined className={"contact-icon"}/>
+                                            <div>Позвонить<br/> по телефону</div>
+                                        </div>
+                                    </a><a style={{color: "inherit", textDecoration: "none"}}
+                                           href={`https://wa.me/${organizer.phone}`} target={"_blank"}>
                                     <div><WhatsAppOutlined className={"contact-icon"}/>
                                         <div>Написать<br/> в WhatsApp</div>
                                     </div>
+                                </a>
                                 </div>
                             </div>)}
                         </div>
