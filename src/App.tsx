@@ -166,7 +166,7 @@ function App() {
                                 <div className={"section-caption guide-info-caption"} data-text={"Как добраться?"}>Как
                                     добраться?
                                 </div>
-                                <div>
+                                <div className={"guide-info-text"}>
                                     <div><b>Отель Тенет</b></div>
                                     <div>Самый центр Екатеринбурга</div>
                                     <br/>

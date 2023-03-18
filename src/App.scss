@@ -206,6 +206,10 @@ body {
 
 }
 
+.guide-info-text {
+  text-align: left;
+}
+
 .section-caption {
   font-size: 44px;
 }
@@ -507,6 +511,10 @@ body {
     flex-direction: column;
     gap: 40px;
   }
+  .guide-info-text {
+    text-align: center;
+  }
+
   .organizers {
     flex-direction: column;
     gap: 30px;
@@ -567,6 +575,9 @@ body {
   .guide {
     flex-direction: column;
   }
+  .guide-info-text {
+    text-align: center;
+  }
   .name {
     font-size: 40px;
   }
@@ -600,6 +611,9 @@ body {
     flex-direction: column;
     gap: 50px;
     width: 90%;
+  }
+  .guide-info-text {
+    text-align: center;
   }
   .dress-code-color {
     width: 160px;
