@@ -79,6 +79,11 @@ function App() {
     const viewBox = getDateViewBox(isLaptop, isTablet, isLargeMobile);
     const isAlone = guests.length === 1;
 
+    React.useEffect(() => {
+        //@ts-ignore
+        particleground(document.querySelector(".block.first"),{dotColor:"rgba(255,255,255,0.2)",lineColor:"rgba(255,255,255,0.2)"})
+    },[])
+
     const getDifferentText = (alone: string, multiple: string) => {
         return isAlone ? alone : multiple;
     }
@@ -123,7 +128,8 @@ function App() {
                                 <div className={"signature"}>С любовью, Паша и Кристина</div>
                             </div>
                         </div>
-                        <div className={"question"}>{getDifferentText("Ты готов", "Вы готовы")} погрузиться в наш мир?
+                        <div className={"question"}>{getDifferentText("Ты готов", "Вы готовы")} погрузиться в наш
+                            мир?
                         </div>
                         <motion.div style={{y: 0}} className={"arrow"} animate={{y: [0, 10, 0]}}
                                     transition={{repeatType: "loop", repeat: Infinity, duration: 1}}>
@@ -173,7 +179,8 @@ function App() {
                         </div>
                         <div className={"guide"}>
                             <div className={"guide-info"}>
-                                <div className={"section-caption guide-info-caption"} data-text={"Как добраться?"}>Как
+                                <div className={"section-caption guide-info-caption"}
+                                     data-text={"Как добраться?"}>Как
                                     добраться?
                                 </div>
                                 <div className={"guide-info-text"}>
@@ -237,7 +244,8 @@ function App() {
                                 </div>
                                 <div>
                                     <div className={"day-part-caption"}>Окончание мероприятия</div>
-                                    <div style={{width: 285}}>К сожалению, даже такой прекрасный день может закончиться
+                                    <div style={{width: 285}}>К сожалению, даже такой прекрасный день может
+                                        закончиться
                                     </div>
                                 </div>
                             </div>
@@ -269,19 +277,19 @@ function App() {
                                           showStatus={false}
                                           showThumbs={false} swipeable={false}>
                                     <img
-                                        src={"./example1.png"}/>
+                                        src={"./example1.webp"}/>
 
                                     <img
-                                        src={"./example2.png"}/>
+                                        src={"./example2.webp"}/>
 
                                     <img
-                                        src={"./example3.png"}/>
+                                        src={"./example3.webp"}/>
 
                                     <img
-                                        src={"./example4.png"}/>
+                                        src={"./example4.webp"}/>
 
                                     <img
-                                        src={"./example5.png"}/>
+                                        src={"./example5.webp"}/>
                                 </Carousel>
 
                             </div>
@@ -309,7 +317,8 @@ function App() {
                                 <div><img src={`./${organizer.name}.png`} alt="" unselectable={"on"}
                                           draggable={"false"}/>
                                 </div>
-                                <div className={"organizer-name"}>{organizer.name === "inna" ? "Инна" : "Елена"}</div>
+                                <div
+                                    className={"organizer-name"}>{organizer.name === "inna" ? "Инна" : "Елена"}</div>
                                 <div className={"organizer-contacts"}>
                                     <a style={{color: "inherit", textDecoration: "none"}}
                                        href={`tel:${organizer.phone}`}>
@@ -329,7 +338,8 @@ function App() {
                     <motion.div className={"block sixth"} {...animationProps}>
                         <div className={"section-caption dress-code-caption"}>Ответ на приглашение</div>
                         <div className={"section-subtext form-deadLine"}>
-                            Мы просим подтвердить свое присутствие на торжестве и ответить на<br/> несколько вопросов,
+                            Мы просим подтвердить свое присутствие на торжестве и ответить на<br/> несколько
+                            вопросов,
                             которые
                             помогут нам при организации свадьбы<br/><br/>
 

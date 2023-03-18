@@ -5,6 +5,10 @@ body {
   color: #563C77;
   text-align: center;
 }
+canvas{
+  position: absolute;
+  top: 0;
+}
 
 #root {
   width: 100%;
@@ -33,6 +37,7 @@ body {
 }
 
 .block.first {
+  position: relative;
   min-height: 100vh;
   padding-top: 160px;
   background: linear-gradient(-45deg, #F9AC9C, #FB9FB3, #9AA8E8, #C991ED, #CA6AAD);
